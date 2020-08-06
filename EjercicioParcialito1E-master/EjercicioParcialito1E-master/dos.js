@@ -15,14 +15,19 @@ function mostrar()
 	respuesta = "si";
 	let nombreArt;
 	let categoriaArt;
-	let preicoArt;
+	let precioArt;
+	let mayorPrecio = 0;
 
 	respuesta = prompt("Quiere ingresar un producto ?");
 	while (respuesta == "si") {
-		nombreArt = prompt ("Nombre del articulo");
-	 	categoriaArt = prompt("Catergoria del articulo");
-		preicoArt = prompt ("Precio del articulo");
-		respuesta = prompt("Quiere ingresar otro numero ?");
+		precioArt = parseInt(prompt ("Precio del articulo"));
+		if(mayorPrecio < precioArt)
+		{
+			nombreArt = prompt ("Nombre del articulo");
+			categoriaArt = prompt("Catergoria del articulo");
+		}
+		respuesta = prompt("Quiere ingresar otro articulo?");
 	}
 
+	alert(`El mayor precio es de $${precioArt} y corresponde un(a) ${nombreArt} en la categoria ${categoriaArt}`);
 }
